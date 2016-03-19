@@ -1,25 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lb-2L-12c">
+                                <rect key="frame" x="10" y="120" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="NVT-No-gHF"/>
+                                    <constraint firstAttribute="height" constant="30" id="u8L-g6-6z4"/>
+                                </constraints>
+                                <state key="normal" title="开始请求"/>
+                                <connections>
+                                    <action selector="startHttp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nNo-Pf-w1b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W77-Ao-l9K">
+                                <rect key="frame" x="335" y="120" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2d6-H7-1cs"/>
+                                    <constraint firstAttribute="width" constant="30" id="lc3-Nn-umS"/>
+                                </constraints>
+                                <state key="normal" title="取消"/>
+                                <connections>
+                                    <action selector="cancelHttp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEn-SN-qNR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmM-oY-dkj">
+                                <rect key="frame" x="10" y="180" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Ni2-Vy-IHm"/>
+                                    <constraint firstAttribute="height" constant="30" id="Tyv-En-6vi"/>
+                                </constraints>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="suspendAllNetworking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHG-Zo-5ub"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-0Y-VEX">
+                                <rect key="frame" x="335" y="170" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1hQ-aM-4sC"/>
+                                    <constraint firstAttribute="width" constant="30" id="EeP-jR-jed"/>
+                                </constraints>
+                                <state key="normal" title="恢复"/>
+                                <connections>
+                                    <action selector="resumeAllNetworking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b8-yR-dKt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Lb-2L-12c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Yd6-lu-F26"/>
+                            <constraint firstAttribute="trailing" secondItem="W77-Ao-l9K" secondAttribute="trailing" constant="10" id="c2u-2q-IkX"/>
+                            <constraint firstItem="gmM-oY-dkj" firstAttribute="top" secondItem="2Lb-2L-12c" secondAttribute="bottom" constant="30" id="iEG-rb-Ubp"/>
+                            <constraint firstItem="2Lb-2L-12c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ixP-BB-y86"/>
+                            <constraint firstItem="gmM-oY-dkj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="jgg-7V-J2r"/>
+                            <constraint firstAttribute="trailing" secondItem="fvh-0Y-VEX" secondAttribute="trailing" constant="10" id="nIN-FS-UWw"/>
+                            <constraint firstItem="W77-Ao-l9K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="svF-GI-qTy"/>
+                            <constraint firstItem="fvh-0Y-VEX" firstAttribute="top" secondItem="W77-Ao-l9K" secondAttribute="bottom" constant="20" id="ypL-vh-r61"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="171.5" y="329.5"/>
         </scene>
     </scenes>
 </document>
